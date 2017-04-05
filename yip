@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+// shelljs模块重新包装了child_process子进程
+var shell = require("shelljs");
+require('shelljs/global');  // 全局模式
+const pkg=require('./package.json');
+
+var argv = require('yargs')
+		.command('init', '初始化项目', function(yargs){
+			const yipInit = require('./lib/init')
+			var argv = yargs.reset()
+				.argv;
+			// echo('yip init project:');
+			yipInit.init(argv);
+		})
+		// .command('test', '测试命令', function(yargs){
+		// 	echo('yip test command!');
+		// })
+		.option('v', {
+	    alias : 'version',
+	    demand: false,
+	    describe: '显示版本号'
+	  })
+		.usage('Usage: yip [command] [options]')
+		.example('hello -n yip', 'say hello to yip')
+  	// .alias("v", "version")
+		.help("h")
+  	.alias("h", "help")
+  	.epilog('BinoYip @ copyright 2017')
+		.argv;
+
+if(argv.v){
+  console.log('v'+pkg.version);
+}

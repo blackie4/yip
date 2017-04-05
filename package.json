@@ -1,0 +1,24 @@
+{
+  "name": "yip",
+  "version": "0.1.0",
+  "description": "yip cli",
+  "bin": {
+    "yip": "yip"
+  },
+  "keywords": [
+    "yip",
+    "web",
+    "framework",
+    "mobile",
+    "pc"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackie4/yip.git"
+  },
+  "dependencies": {
+    "inquirer": "^3.0.6",
+    "shelljs": "^0.7.7",
+    "yargs": "^7.0.2"
+  }
+}
